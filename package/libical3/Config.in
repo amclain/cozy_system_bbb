@@ -1,0 +1,6 @@
+config BR2_PACKAGE_LIBICAL3
+    bool "libical3"
+    help
+        iCalendar protocol
+
+        https://github.com/libical/libical

@@ -1,0 +1,5 @@
+menu "Custom packages"
+
+source "$NERVES_DEFCONFIG_DIR/package/libical3/Config.in"
+
+endmenu
