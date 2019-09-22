@@ -1,7 +1,7 @@
 defmodule NervesSystemBbb.MixProject do
   use Mix.Project
 
-  @app :nerves_system_bbb
+  @app :cozy_system_bbb
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
            |> String.trim()
@@ -10,7 +10,7 @@ defmodule NervesSystemBbb.MixProject do
     [
       app: @app,
       version: @version,
-      elixir: "~> 1.6",
+      elixir: "~> 1.9",
       compilers: Mix.compilers() ++ [:nerves_package],
       nerves_package: nerves_package(),
       description: description(),
@@ -35,7 +35,7 @@ defmodule NervesSystemBbb.MixProject do
     [
       type: :system,
       artifact_sites: [
-        {:github_releases, "nerves-project/#{@app}"}
+        # {:github_releases, "amclain/#{@app}"}
       ],
       build_runner_opts: build_runner_opts(),
       platform: Nerves.System.BR,
@@ -48,17 +48,17 @@ defmodule NervesSystemBbb.MixProject do
 
   defp deps do
     [
-      {:nerves, "~> 1.5.0", runtime: false},
-      {:nerves_system_br, "1.8.5", runtime: false},
+      {:nerves, "~> 1.5.1", runtime: false},
+      {:nerves_system_br, "1.9.2", runtime: false},
       {:nerves_toolchain_arm_unknown_linux_gnueabihf, "1.2.0", runtime: false},
       {:nerves_system_linter, "~> 0.3.0", runtime: false},
-      {:ex_doc, "~> 0.18", only: [:dev, :test], runtime: false}
+      {:ex_doc, "~> 0.21", only: [:dev, :test], runtime: false}
     ]
   end
 
   defp description do
     """
-    Nerves System - BeagleBone Black, BeagleBone Green, PocketBeagle and more
+    Nerves System - Cozy Gateway - BeagleBone Black
     """
   end
 
@@ -66,7 +66,7 @@ defmodule NervesSystemBbb.MixProject do
     [
       files: package_files(),
       licenses: ["Apache 2.0"],
-      links: %{"Github" => "https://github.com/nerves-project/#{@app}"}
+      links: %{"Github" => "https://github.com/amclain/#{@app}"}
     ]
   end
 
