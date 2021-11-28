@@ -1,8 +1,8 @@
 defmodule NervesSystemBbb.MixProject do
   use Mix.Project
 
-  @github_organization "nerves-project"
-  @app :nerves_system_bbb
+  @app :cozy_system_bbb
+  @github_organization "amclain"
   @source_url "https://github.com/#{@github_organization}/#{@app}"
   @version Path.join(__DIR__, "VERSION")
            |> File.read!()
@@ -12,7 +12,7 @@ defmodule NervesSystemBbb.MixProject do
     [
       app: @app,
       version: @version,
-      elixir: "~> 1.6",
+      elixir: "~> 1.9",
       compilers: Mix.compilers() ++ [:nerves_package],
       nerves_package: nerves_package(),
       description: description(),
@@ -74,7 +74,7 @@ defmodule NervesSystemBbb.MixProject do
 
   defp description do
     """
-    Nerves System - BeagleBone Black, BeagleBone Green, PocketBeagle and more
+    Nerves System - Cozy Gateway - BeagleBone Black
     """
   end
 
